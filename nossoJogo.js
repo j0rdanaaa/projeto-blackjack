@@ -11,35 +11,38 @@
  * 
  */
 
-    console.log("Bem-vindo(a) ao jogo de blackjack!")
+console.log("Bem-vindo(a) ao jogo de blackjack!")
 
-const jogo = confirm("Quer iniciar uma nova rodada?")
-if( jogo === true) 
-    console.log("Iniciando uma nova rodada")
-   
+const novoJogo = confirm("Quer iniciar uma nova rodada?")
+
+    function blackJack() {   
+}
 
 
-if (jogo) {
-    const carta1User = comprarCarta()
-    const carta2User = comprarCarta()
-    const carta1Pc = comprarCarta()
-    const carta2Pc = comprarCarta()
+if (novoJogo) {
+  
+    const cartaUsuarioUm = comprarCarta()
+    const cartaUsuarioDois = comprarCarta()
+    const cartaComputadorUm = comprarCarta()
+    const cartaComputadorDois = comprarCarta()
 
-    let pontuacaoUsuario = carta1User.valor + carta2User.valor
-    let pontuacaoPc = carta1Pc.valor + carta2Pc.valor
+    let pontuacaoUsuario = cartaUsuarioUm.valor + cartaUsuarioDois.valor
+    let pontuacaoComputador = cartaComputadorUm.valor + cartaComputadorDois.valor
 
-    console.log(`Usuário - cartas: ${carta1User.texto} ${carta2User.texto} - ${pontuacaoUsuario}`)
-    console.log(`Computador - cartas: ${carta1Pc.texto} ${carta2Pc.texto} - ${pontuacaoPc}`)
+    console.log(`"Usuário - cartas: ${cartaUsuarioUm.texto} ${cartaUsuarioDois.texto} - pontuação ${pontuacaoUsuario}"`)
+    console.log(`"Computador - cartas: ${cartaComputadorUm.texto} ${cartaComputadorDois.texto} - pontuação ${pontuacaoComputador}"`)
 
-    if (pontuacaoUsuario => 21) {
+    if (pontuacaoUsuario > pontuacaoComputador) {
         console.log("O usuário ganhou!")
-    } else if (pontuacaoPc => 21) {
+    } else if (pontuacaoComputador > pontuacaoUsuario) {
         console.log("O computador ganhou!")
-    } else if (pontuacaoUsuario === pontuacaoPc) {
+    } else if (pontuacaoUsuario === pontuacaoComputador) {
         console.log("Empate!")
     }
 
-} else {
-    console.log("O jogo acabou")
+}else{
+    console.log("O jogo acabou.")
 }
+
+
 
