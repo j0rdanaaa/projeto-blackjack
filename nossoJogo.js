@@ -10,3 +10,39 @@
  * 
  * 
  */
+
+console.log("Bem-vindo(a) ao jogo de blackjack!")
+
+const novoJogo = confirm("Quer iniciar uma nova rodada?")
+
+    function blackJack() {   
+}
+
+
+if (novoJogo) {
+  
+    const cartaUsuarioUm = comprarCarta()
+    const cartaUsuarioDois = comprarCarta()
+    const cartaComputadorUm = comprarCarta()
+    const cartaComputadorDois = comprarCarta()
+
+    let pontuacaoUsuario = cartaUsuarioUm.valor + cartaUsuarioDois.valor
+    let pontuacaoComputador = cartaComputadorUm.valor + cartaComputadorDois.valor
+
+    console.log(`"Usuário - cartas: ${cartaUsuarioUm.texto} ${cartaUsuarioDois.texto} - pontuação ${pontuacaoUsuario}"`)
+    console.log(`"Computador - cartas: ${cartaComputadorUm.texto} ${cartaComputadorDois.texto} - pontuação ${pontuacaoComputador}"`)
+
+    if (pontuacaoUsuario > pontuacaoComputador) {
+        console.log("O usuário ganhou!")
+    } else if (pontuacaoComputador > pontuacaoUsuario) {
+        console.log("O computador ganhou!")
+    } else if (pontuacaoUsuario === pontuacaoComputador) {
+        console.log("Empate!")
+    }
+
+}else{
+    console.log("O jogo acabou.")
+}
+
+
+
